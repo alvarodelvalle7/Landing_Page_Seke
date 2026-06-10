@@ -1,0 +1,94 @@
+---
+import "../styles/global.css";
+import { Facebook, Instagram, Mail, Phone } from "lucide-astro";
+
+const socialMediaLinks = [
+        {
+        name: "Facebook",
+        url: "https://www.facebook.com/BlackPantherFitness",
+        icon: Facebook
+    },
+    {
+        name: "Instagram",
+        url: "https://www.instagram.com/BlackPantherFitness",
+        icon: Instagram
+    }
+]
+
+const navLinks = [
+    { name: "Inicio", url: "/" },
+    { name: "Sobre Mi", url: "/about" }
+]
+
+const navTerms = [
+    { name: "PRIVACIDAD", url: "/privacity"},
+    { name: "TÉRMINOS", url: "/terms"},
+    //{ name: "COOKIES", url: "/cookies"} SIGUIENTE VERSIÓN
+]
+---
+
+<footer class="bg-[#010101] border-t-2 border-[#FFCC00]">
+
+    <section class="flex flex-col md:flex-row justify-between md:items-start max-w-6xl mx-auto px-6 py-16 gap-16 md:gap-0">
+        <!-- SECCIÓN DE NAVEGACIÓN -->
+        <nav class="flex flex-col gap-6">
+            <h2 class="text-sm text-[#FFCC00] font-semibold tracking-widest border-l-4 border-[#FFCC00] pl-4">NAVEGACIÓN</h2>
+            <ul class="text-sm space-y-6">
+
+                <!-- Recorremos el array de enlaces de navegación -->
+                {navLinks.map((link) => (
+                    <li><a href={link.url} class="hover:text-[#FFEFCD]">{link.name}</a></li>
+                ))}
+
+            </ul>
+        </nav>
+
+        <!-- SECCIÓN DE REDES SOCIALES -->
+        <nav class="flex flex-col gap-6">
+            <h2 class="text-sm text-[#FFCC00] font-semibold tracking-widest border-l-4 border-[#FFCC00] pl-4">REDES SOCIALES</h2>
+            <ul class="text-sm space-y-6">
+
+                <!-- Recorremos el array de redes sociales -->
+                {socialMediaLinks.map((social) => {
+                    const Icon = social.icon;
+
+                    return (
+                        <li>
+                            <a href={social.url} class="flex items-center gap-3 hover:text-[#FFEFCD]">
+                                <Icon size={18} />
+                                <span>{social.name}</span>
+                            </a>
+                        </li>
+                    );
+                })}
+
+            </ul>
+        </nav>
+
+        <!-- SECCIÓN DE INFORMACIÓN  -->
+        <nav class="flex flex-col gap-6">
+            <h2 class="text-sm text-[#FFCC00] font-semibold tracking-widest border-l-4 border-[#FFCC00] pl-4">CONTACTO</h2>
+            <ul class="text-sm space-y-6">
+                <li><a href="mailto:sekegallart24@gmail.com" class="hover:text-[#FFEFCD] flex items-center gap-3 transition-colors" target="_blank" rel="noopener noreferrer"><Mail size={18}/><span>sekegallart24@gmail.com</span></a></li>
+                <li><a href="tel:+34626637516" class="hover:text-[#FFEFCD] flex items-center gap-3 transition-colors" target="_blank" rel="noopener noreferrer"><Phone size={18}/><span>+34 626 637 516</span></a></li>
+            </ul>
+        </nav>
+
+    </section>
+
+    <!-- SECCIÓN DE DERECHOS RESERVADOS -->
+    <section class="flex flex-col md:flex-row justify-between items-center gap-4 border-t-2 border-[#2A2D2D] max-w-8xl mx-auto px-6 py-8">
+        <p class="text-[10px] lg:text-sm text-center font-medium tracking-wider text-[#827B6D]">&copy; 2026 BLACK PANTHER FITNESS TODOS LOS DERECHOS RESERVADOS.</p>
+        <nav>
+            <ul class="flex gap-8 items-center">
+
+                <!-- Recorremos el array de Términos y Privacidad -->
+                {navTerms.map((link) => (
+                    <li><a href={link.url} class="text-[10px] lg:text-sm font-medium tracking-wider text-[#D2C5AB] hover:text-white">{link.name}</a></li>
+                ))}
+                
+            </ul>
+        </nav>
+    </section>
+
+</footer>

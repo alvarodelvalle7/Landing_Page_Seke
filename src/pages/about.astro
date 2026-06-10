@@ -1,0 +1,167 @@
+---
+import Layout from "../layouts/Layout.astro";
+import image from "../assets/img/perfilseke.png";
+import { Image } from "astro:assets";
+import { Award, Hourglass } from "lucide-astro";
+import "../styles/global.css";
+
+const textDescription = "Creo en el movimiento como motor del bienestar físico y social. La unión entre el deporte y la acción social me llevó a promover un entrenamiento funcional accesible, inclusivo y transformador para todas las personas."
+
+const certificates = [
+    {
+        icon: Award,
+        name: "Técnico Superior en Animación de Actividades Físicas y  Deportivas (TAFAD) 2021-2023",
+        ubication: "IES Jorge Juan (Puerto Sagunto)",
+        description: "Capacitado para el diseño, dirección y evaluación de programas de entrenamiento, actividades físico-deportivas y eventos recreativos. Conocimientos sólidos en acondicionamiento físico, anatomía, metodologías de enseñanza, dinámicas de motivación y primeros auxilios. Perfil orientado a la mejora de la salud, el rendimiento y el bienestar de diversos perfiles de usuarios de forma segura y eficaz."
+    },
+    {
+        icon: Hourglass,
+        name: "FP de Integración Social (En curso)",
+        ubication: "CEAC FP",
+        description: "Especializado en el diseño, implantación y evaluación de proyectos de intervención social para promover la igualdad y la inclusión. Dominio de técnicas de mediación comunitaria, resolución de conflictos, dinámicas de grupo y gestión de recursos sociales y de empleo. Habilidad para el apoyo directo y el acompañamiento de colectivos vulnerables, fomentando su autonomía y desarrollo integral."
+    }
+
+]
+
+const experience = [
+    {
+        location: "Second Waves",
+        name: "Monitor Deportivo y Recreativo",
+        date: "2024 - Presente",
+        description: "Planificación y desarrollo de actividades deportivas y recreativas para diferentes grupos de edad, fomentando la participación, el trabajo en equipo y los hábitos de vida saludables. Supervisión de los participantes durante las sesiones, adaptación de las actividades a las necesidades del grupo y garantía del cumplimiento de las normas de seguridad en todo momento."
+    },
+    {
+        location: "Colegio Baladre",
+        name: "Monitor de Comedor Escolar",
+        date: "2023-2024",
+        description: "Atención y supervisión de alumnos durante el servicio de comedor y los periodos de recreo, promoviendo hábitos de convivencia, respeto y autonomía personal. Gestión de grupos, resolución de incidencias y apoyo al bienestar y desarrollo de los menores en un entorno seguro y educativo."
+    },
+    {
+        location: "CPR Serveis Integrals SL",
+        name: "Monitor de Natación y Aquagym",
+        date: "2022-2023",
+        description: "Impartición de clases de natación y actividades de aquagym adaptadas a distintos niveles y edades. Diseño de sesiones dinámicas orientadas a la mejora de la condición física, el aprendizaje técnico y la seguridad en el medio acuático, garantizando una experiencia positiva para los usuarios."
+    },
+    {
+        location: "CPR Serveis Integrals SL",
+        name: "Mantenimiento de Piscinas de uso Colectivo",
+        date: "2021-2022",
+        description: "Realización de tareas de mantenimiento preventivo y correctivo en instalaciones acuáticas, control de parámetros físico-químicos del agua y supervisión del correcto funcionamiento de los sistemas de filtración y depuración. Aplicación de protocolos de higiene y seguridad para garantizar la calidad de las instalaciones."
+    },
+    {
+        location: "Ayuntamiento de Sagunto",
+        name: "Prácticas profesionales (4oo horas)",
+        date: "2020-2021",
+        description: "Colaboración en la organización y desarrollo de actividades deportivas municipales, participando en tareas de apoyo logístico, atención a usuarios y preparación de instalaciones. Adquisición de experiencia práctica en la gestión de programas deportivos y en la coordinación de eventos dirigidos a la comunidad."
+    }
+
+]
+---
+
+<Layout title="Sobre Mi | Black Panther Fitness">
+
+    <!-- CONTENEDOR HERO -->
+    <section class="min-h-screen flex flex-col justify-center md:flex-row items-center gap-12 lg:gap-16 px-8 lg:px-16 xl:px-24 pb-16 md:pb-20 lg:pb-16">
+
+        <!-- TEXTO -->
+        <div class="order-2 md:order-1 flex flex-col items-start gap-8 w-full md:w-1/2 max-w-xl">
+
+            <!-- Titulo -->
+            <div class="flex flex-col gap-2">
+                <span class="text-base md:text-lg lg:text-xl font-semibold tracking-tighter text-[#FFCC00]">Sobre mi</span>
+                <h2 class="font-black tracking-tighter text-3xl md:text-4xl lg:text-5xl">Seke Gallart <br> Bosque<span class="text-[#FFCC00]">.</span></h2>
+            </div>
+
+            <!-- Descripción -->
+            <div>
+                <p class="text-sm md:text-base lg:text-lg font-medium text-gray-400 border-l-4 border-[#FFCC00] pl-4">{textDescription}</p>
+            </div>
+
+            <!-- Botón -->
+             <a href="/contact" class="inline-flex items-center justify-center h-10 md:h-12 px-12 font-semibold tracking-wide text-xs md:text-sm lg:text-base text-black bg-[#FFCC00] rounded-xs transition-all duration-300 hover:bg-yellow-500 hover:-translate-y-1 hover:shadow-lg">DESCARGAR CV</a>
+        </div>
+
+        <!-- IMAGEN -->
+        <Image src={image} alt="Foto de Perfil de Seke Gallart Bosque" loading="eager" class="grayscale w-full md:w-1/2 max-w-sm lg:max-w-lg brightness-50 order-1 md:order-2 mask-[linear-gradient(to_top,transparent,black_40%)] [-webkit-mask-image:linear-gradient(to_top,transparent,black_40%)]">
+
+    </section>
+
+    <!-- CONTENEDOR CERTIFICADOS -->
+    <section class="min-h-screen flex flex-col justify-center items-center gap-12 px-8 md:px-12 py-16 lg:px-16 lg:py-20 xl:px-24 xl:py-24 bg-[#0c0c09]">
+
+        <div class="space-y-7 w-full">
+            <!-- Título -->
+            <h2 class="font-black tracking-widest text-2xl md:text-4xl lg:text-5xl">CERTIFICADOS<span class="text-[#FFCC00]">.</span></h2>
+            <hr class="w-full h-1 bg-[#FFCC00]">
+        </div>
+
+        <!-- Contenedor de cada certificado -->
+        <div class="flex flex-col gap-12">
+            {certificates.map((link) => {
+                const Icon = link.icon;
+
+                return (
+                    <article class="flex gap-4 items-start p-4">
+
+                            <!-- Icono -->
+                            <Icon class="w-5 h-5 text-[#FFCC00] mt-1 shrink-0" />
+
+                            <!-- Texto -->
+                            <div class="flex flex-col gap-4">
+                                <h3 class="font-semibold tracking-wider text-base md:text-lg lg:text-xl">
+                                    {link.name}
+                                </h3>
+
+                                <h4 class="font-semibold tracking-widest text-xs md:text-sm lg:text-base text-[#E6CE83]">
+                                    {link.ubication}
+                                </h4>
+
+                                <p class="font-medium tracking-tighter text-xs md:text-sm lg:text-base text-gray-400 text-justify">
+                                    {link.description}
+                                </p>
+                            </div>
+                    </article>
+                );
+            })}
+        </div>
+
+    </section>
+
+    <!-- CONTENEDOR DE EXPERIENCIA LABORAL -->
+    <section class="min-h-screen flex flex-col md:flex-row justify-center items-start gap-12 md:gap-40 px-8 md:px-12 py-16 lg:px-16 lg:py-20 xl:px-24 xl:py-24">
+
+        <!-- Título para escritorio -->
+        <h2 class="hidden md:block font-black tracking-widest text-8xl md:[writing-mode:vertical-rl] md:rotate-180">EXPERIENCIA<span class="text-[#FFCC00]">.</span></h2>
+        
+        <!-- Título para móviles y tablets -->
+        <div class="space-y-7 w-full md:hidden">
+            <h2 class="font-black tracking-widest text-2xl">EXPERIENCIA<span class="text-[#FFCC00]">.</span></h2>
+            <hr class="w-full h-1 bg-[#FFCC00]">
+        </div>
+
+        <!-- Contenedor de cada experiencia -->
+        <div class="flex flex-col gap-12 max-w-3xl border-l pl-9 border-[#2a2205]">
+            {experience.map((link) => {
+
+                return (
+                    <article class="flex flex-col gap-4 items-start relative">
+
+                            <!-- Punto -->
+                            <div class="absolute -left-10 top-12 w-2 h-2 rounded-full bg-[#FFCC00]"></div>
+
+                            <span class="font-semibold tracking-widest text-[#FFCC00]">{link.location}</span>
+
+                            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center w-full gap-4">
+                                <h2 class="font-semibold tracking-wider text-base md:text-lg lg:text-xl">{link.name}</h2>
+                                <span class="font-semibold tracking-widest whitespace-nowrap text-xs md:text-sm lg:text-base text-[#E6CE83]">{link.date}</span>
+                            </div>
+
+                            <p class="font-medium tracking-tighter text-xs md:text-sm lg:text-base text-gray-400 text-justify">{link.description}</p>
+
+                    </article>
+                );
+            })}
+        </div>
+    </section>
+
+</Layout>

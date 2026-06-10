@@ -1,0 +1,176 @@
+---
+import Layout from '../layouts/Layout.astro';
+import image from "../assets/img/background_jungla.webp";
+import { Image } from "astro:assets";
+import { FileText, Video, TrendingUp, Zap, Dumbbell, Target, RefreshCw, MessageCircle} from "lucide-astro";
+import "../styles/global.css";
+
+// Textos de la página
+const pageTitle = "DESATA TU";
+const pageDescription = "Tu camino hacia una vida más saludable comienza aquí. Descubre una nueva forma de entrenar, superar tus límites y convertir tus objetivos en resultados reales.";
+const serviceDescription = "Inversiones únicas para resultados excepcionales. Elevando la narrativa visual a través de la precisión técnica y la visión artística."
+const priceDescription = "Accede a rutinas personalizadas, seguimiento profesional y estadísticas en tiempo real para alcanzar tus objetivos más rápido."
+
+// Elementos de cada tarjeta
+const cardServices = [
+	{
+		icon: FileText,
+		name: "TABLAS PERSONALIZADAS",
+		description: "Recibe tu plan de entrenamiento exclusivo en PDF, diseñado especificamente para tus objetivos y condiciones."
+	},
+	{
+		icon: Target,
+		name: "OBJETIVOS CLAROS",
+		description: "Define tus metas y trabajo con un plan estructurado para alcanzarlas de forma eficiente."
+	},
+	{
+		icon: TrendingUp,
+		name: "SEGUIMIENTO DE PROGRESO",
+		description: "Registra tus cargas, series y repeticiones. Visualiza tu evolución y comparte resultados con tu entrenador."
+	},
+	{
+		icon: Zap,
+		name: "SOPORTE CONTINUO",
+		description: "Comunicación directa con tu entrenador. Notificaciones de nuevos contenidos y actualizaciones."
+	},
+	{
+		icon: Dumbbell,
+		name: "ADAPTADO A LESIONES",
+		description: "Indica tus limitaciones y recibe rutinas que respetan tu cuerpo y previenen lesiones."
+	},
+	{
+		icon: Video,
+		name: "VÍDEOS EXPLICATIVOS",
+		description: "Accede a vídeos detallados con técnicas correctas y explicaciones de cada ejercicio de tu rutina."
+	}
+]
+
+// Elementos del precio
+const priceElements = [
+	{
+		icon: FileText,
+		name: "Tablas de entrenamiento personalizadas en PDF",
+	},
+		{
+		icon: Video,
+		name: "Vídeos explicativos de ejercicios",
+	},
+		{
+		icon: TrendingUp,
+		name: "Seguimiento de progreso y cargas",
+	},
+		{
+		icon: RefreshCw,
+		name: "Actualizaciones periódicas de rutinas",
+	},
+		{
+		icon: MessageCircle,
+		name: "Comunicación directa con el entrenador",
+	},
+		{
+		icon: Dumbbell,
+		name: "Adaptación a tu material disponible",
+	},
+]
+---
+
+<Layout title="Home | Black Panther Fitness">
+
+	<!-- SECCIÓN HERO -->
+    <section class="relative min-h-[90vh] flex items-center">
+
+		<!-- IMAGEN DE BACKGROUND -->
+		<Image src={image} alt="Imagen de background de una jungla" loading="eager" fetchpriority="high" class="absolute inset-0 h-full w-full object-cover"/>
+
+		<!-- CONTENEDOR DE TEXTO -->
+		<div class="relative z-10 max-w-3xl px-4 sm:px-8 lg:px-28 flex flex-col gap-6">
+			<span class="self-start text-[8px] lg:text-[10px] tracking-widest text-[#FFEFCD] bg-[#241A00] border-l-4 border-[#FFCC00] px-4 py-2">ENTRENAMIENTO DE ÉLITE</span>
+			<h1 class="font-black tracking-tighter text-5xl md:text-6xl lg:text-7xl">{pageTitle}<span class="text-[#FFCC00]"> POTENCIAL</span></h1>
+			<p class="text-sm md:text-base lg:text-lg text-gray-400">{pageDescription}</p>
+			<a href="mailto:sekegallart24@gmail.com" class="self-start inline-flex items-center justify-center h-10 md:h-12 px-12 font-semibold tracking-wide text-xs md:text-sm lg:text-base text-black bg-[#FFCC00] rounded-xs transition-all duration-300 hover:bg-yellow-500 hover:-translate-y-1 hover:shadow-lg" target="_blank" rel="noopener noreferrer">CONÓCENOS</a>
+		</div>
+
+		<!-- CAPA OSCURA PARA LA IMAGEN-->
+		<div class="absolute inset-0 bg-black/85"></div>
+
+    </section>
+
+	<!-- SECCIÓN DE SERVICIOS -->
+	<section class="min-h-screen flex flex-col justify-center items-center gap-12 px-8 md:px-12 py-16 lg:px-16 lg:py-20 xl:px-24 xl:py-24">
+
+		<!-- CONTENEDOR TÍTULO -->
+		<div class="flex flex-col items-center gap-6 mx-auto max-w-2xl">
+			<h2 class="font-black tracking-widest text-2xl md:text-4xl lg:text-5xl">SERVICIOS<span class="text-[#FFCC00]">.</span></h2>
+			<p class="text-sm md:text-base lg:text-lg font-medium text-gray-400 text-center">{serviceDescription}</p>
+		</div>
+
+		<!-- CONTENEDOR TARJETAS -->
+		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+			{cardServices.map((element) => {
+
+				const Icon = element.icon;
+
+                return (
+                    <article class="flex flex-col gap-4 items-center justify-start bg-blue-950/20 rounded-xs p-8 py-12">
+
+                        <!-- Icono -->
+                    	<Icon class="w-8 h-8 sm:w-10 sm:h-10 text-[#FFCC00] shrink-0" />
+
+                        <h2 class="font-semibold tracking-wider text-base md:text-lg lg:text-xl text-center">
+                            {element.name}
+                        </h2>
+
+                        <p class="font-medium tracking-tighter text-xs md:text-sm lg:text-base text-gray-400 text-center">
+                            {element.description}
+                        </p>
+                    </article>
+                );
+			})}
+		</div>
+		
+	</section>
+
+	<!-- SECCIÓN DE PRECIOS -->
+	<section class="min-h-screen flex flex-col xl:flex-row justify-center items-center xl:items-start bg-[#080806] gap-12 xl:gap-48 px-8 md:px-12 py-16 lg:px-16 lg:py-20 xl:px-24 xl:py-24">
+
+		<!-- CONTENEDOR TÍTULO -->
+		<div class="flex flex-col items-center gap-6 max-w-lg">
+			<h2 class="font-black tracking-widest text-2xl md:text-4xl lg:text-5xl">LA FORMA MÁS INTELIGENTE DE ENTRENAR<span class="text-[#FFCC00]">.</span></h2>
+			<p class="text-sm md:text-base lg:text-lg font-medium text-gray-400 text-justify">{priceDescription}</p>
+		</div>
+
+		<!-- CONTENEDOR CONTENIDO SUSCRIPCIÓN -->
+		<article class="flex flex-col gap-6 justify-center rounded-xs p-8 py-12 relative overflow-hidden border border-[#2A2A2A] bg-[#0D0D0D] bg-[linear-gradient(135deg,rgba(255,204,0,0.12)_0%,transparent_35%,transparent_65%,rgba(255,204,0,0.08)_100%)] shadow-[0_0_40px_rgba(255,204,0,0.08)]">
+
+			<div class="flex flex-col gap-2">
+				<span class="self-start text-[8px] lg:text-[10px] tracking-widest text-[#FFEFCD] bg-[#241A00] border border-[#FFCC00] px-2 py-0.5 rounded-full">SUSCRIPCIÓN PREMIUM</span>
+				<h3 class="font-semibold tracking-wider text-xl md:text-2xl lg:text-3xl">35€ Pago inicial</h3>
+				<p class="text-sm md:text-base lg:text-lg font-medium text-gray-400 text-justify">25€/mes</p>
+			</div>
+
+			<div class="flex flex-col gap-3">
+				{priceElements.map((element) => {
+
+				const Icon = element.icon;
+
+                return (
+                    <div class="flex items-center gap-3">
+
+                        <!-- Icono -->
+                    	<Icon class="w-4 h-4 text-[#FFCC00] shrink-0" />
+
+                        <h2 class="font-semibold tracking-wider text-sm md:text-base lg:text-base">
+                            {element.name}
+                        </h2>
+                    </div>
+                );
+			})}
+			</div>
+
+			<a href="mailto:sekegallart24@gmail.com" class="inline-flex items-center justify-center h-10 md:h-12 px-12 mt-6 font-semibold tracking-wide text-xs md:text-sm lg:text-base text-black bg-[#FFCC00] rounded-xs transition-all duration-300 hover:bg-yellow-500 hover:-translate-y-1 hover:shadow-lg" target="_blank" rel="noopener noreferrer">EMPIEZA HOY →</a>
+
+		</article>
+		
+	</section>
+
+</Layout>

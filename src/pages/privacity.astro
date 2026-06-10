@@ -1,0 +1,231 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+export const privacyPolicy = [
+    {
+        id: 1,
+        title: "Identificación del responsable del tratamiento",
+        paragraphs: [
+        "En cumplimiento del Reglamento (UE) 2016/679 del Parlamento Europeo y del Consejo, de 27 de abril de 2016 (RGPD), y la Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales (LOPDGDD), se informa que el responsable del tratamiento de los datos personales es:"
+        ],
+        details: [
+        {
+            label: "Responsable",
+            value: "Seke Gallart Bosque"
+        },
+        {
+            label: "Nombre comercial",
+            value: "Black Panther Fitness"
+        },
+        {
+            label: "Correo electrónico",
+            value: "sekegallart24@gmail.com",
+            href: "mailto:sekegallart24@gmail.com"
+        },
+        {
+            label: "Teléfono",
+            value: "+34 626 637 516",
+            href: "tel:+34626637516"
+        }
+        ]
+    },
+
+    {
+        id: 2,
+        title: "Datos personales recopilados",
+        paragraphs: [
+        "Black Panther Fitness recopila las siguientes categorías de datos personales de sus usuarios:"
+        ],
+        bullets: [
+        "Datos identificativos: nombre y apellidos.",
+        "Datos de contacto: dirección postal, correo electrónico y número de teléfono.",
+        "Datos de acceso: nombre de usuario y contraseña (almacenada de forma cifrada).",
+        "Datos de pago: información necesaria para procesar pagos, gestionados de forma segura a través de Stripe.",
+        "Datos relacionados con la salud y actividad física, únicamente en caso de ser facilitados voluntariamente por el usuario.",
+        "Datos de uso de la plataforma: interacciones, frecuencia de acceso y preferencias.",
+        "Imagen y voz en el contexto de videollamadas de seguimiento personalizado."
+        ]
+    },
+
+    {
+        id: 3,
+        title: "Finalidades del tratamiento",
+        paragraphs: [
+        "Los datos personales recabados serán tratados con las siguientes finalidades:"
+        ],
+        bullets: [
+        "Gestión del registro y autenticación de usuarios en la plataforma.",
+        "Prestación de servicios personalizados: rutinas de entrenamiento, seguimiento del progreso y asesoramiento nutricional y deportivo.",
+        "Gestión de pagos, facturación y control de suscripciones.",
+        "Realización de videollamadas de seguimiento para evaluar el progreso del usuario.",
+        "Atención al cliente y resolución de consultas o incidencias.",
+        "Envío de comunicaciones relacionadas con el servicio contratado.",
+        "Mejora continua de la plataforma y sus funcionalidades.",
+        "Cumplimiento de obligaciones legales aplicables."
+        ]
+    },
+
+    {
+        id: 4,
+        title: "Base legal del tratamiento",
+        paragraphs: [
+        "El tratamiento de los datos personales se ampara en las siguientes bases de legitimación:"
+        ],
+        bullets: [
+        "Ejecución de un contrato: el tratamiento es necesario para la prestación de los servicios contratados por el usuario.",
+        "Consentimiento del usuario: para el tratamiento de datos de salud y el envío de comunicaciones comerciales.",
+        "Cumplimiento de obligaciones legales: en materia fiscal, mercantil y contable.",
+        "Interés legítimo del responsable: para garantizar la seguridad de la plataforma y mejorar la experiencia de usuario."
+        ]
+    },
+
+    {
+        id: 5,
+        title: "Derechos de los usuarios",
+        paragraphs: [
+        "De conformidad con la normativa vigente, los usuarios tienen reconocidos los siguientes derechos sobre sus datos personales:"
+        ],
+        bullets: [
+        "Derecho de acceso: conocer qué datos se están tratando.",
+        "Derecho de rectificación: solicitar la corrección de datos inexactos o incompletos.",
+        "Derecho de supresión: solicitar la eliminación de los datos cuando ya no sean necesarios.",
+        "Derecho de oposición: oponerse al tratamiento de sus datos en determinadas circunstancias.",
+        "Derecho a la limitación del tratamiento: solicitar que se restrinja el uso de sus datos.",
+        "Derecho a la portabilidad: recibir sus datos en un formato estructurado y de uso común."
+        ],
+        extraParagraphs: [
+        "Para ejercer cualquiera de estos derechos, el usuario puede enviar una solicitud escrita a:",
+        "La solicitud deberá incluir nombre, apellidos y copia del DNI u otro documento identificativo. El responsable responderá en el plazo máximo de un mes desde la recepción de la solicitud.",
+        "Asimismo, el usuario tiene derecho a presentar una reclamación ante la Agencia Española de Protección de Datos (AEPD)."
+        ],
+        contacts: [
+        {
+            label: "Correo electrónico",
+            value: "macumbagabaldon9@gmail.com",
+            href: "mailto:macumbagabaldon9@gmail.com"
+        }
+        ],
+        externalLinks: [
+        {
+            label: "AEPD",
+            value: "www.aepd.es",
+            href: "https://www.aepd.es"
+        }
+        ]
+    },
+    {
+        id: 6,
+        title: "Medidas de seguridad",
+        paragraphs: [
+            "Black Panther Fitness ha adoptado las medidas técnicas y organizativas necesarias para garantizar la seguridad de los datos personales y evitar su alteración, pérdida, tratamiento o acceso no autorizado, conforme a lo establecido en el RGPD.",
+            "Entre las medidas implantadas se encuentran:"
+        ],
+        bullets: [
+            "Cifrado de datos en tránsito mediante protocolo SSL/TLS.",
+            "Almacenamiento de contraseñas en formato cifrado (hashing).",
+            "Control de accesos y gestión de permisos por roles.",
+            "Servidores seguros con copias de seguridad periódicas.",
+            "Protocolos de autenticación y verificación de identidad.",
+            "Revisión periódica de las medidas de seguridad implantadas."
+        ]
+    },
+    {
+        id: 7,
+        title: "Transferencias internacionales de datos",
+        paragraphs: [
+            "Black Panther Fitness utiliza Stripe como pasarela de pago, cuyo proveedor puede estar ubicado fuera del Espacio Económico Europeo (EEE). En estos casos, Stripe garantiza el cumplimiento del RGPD mediante las cláusulas contractuales tipo aprobadas por la Comisión Europea, asegurando un nivel de protección adecuado para los datos transferidos.",
+            "No se realizarán otras transferencias internacionales de datos sin contar con las garantías adecuadas exigidas por la normativa aplicable."
+        ]
+    },
+    {
+        id: 8,
+        title: "Conservación de los datos",
+        paragraphs: [
+            "Los datos personales se conservarán durante el tiempo necesario para cumplir con las finalidades para las que fueron recabados y, en particular:"
+        ],
+        bullets: [
+            "Los datos de clientes se conservarán durante la vigencia de la relación contractual y, una vez finalizada, durante los plazos legalmente establecidos.",
+            "Los datos de facturación y pagos se conservarán durante el plazo exigido por la normativa tributaria vigente.",
+            "Las grabaciones de videollamadas, si las hubiera, se conservarán únicamente durante el tiempo necesario para el seguimiento del usuario."
+        ],
+        footer: "Transcurridos dichos plazos, los datos serán eliminados de forma segura o anonimizados de manera irreversible."
+    },
+    {
+        id: 9,
+        title: "Modificaciones de la política de privacidad",
+        paragraphs: [
+            "Seke Gallart Bosque, en nombre de Black Panther Fitness, se reserva el derecho a modificar la presente Política de Privacidad para adaptarla a cambios legislativos, jurisprudenciales o tecnológicos.",
+            "Cualquier modificación relevante será comunicada a los usuarios a través de la plataforma o por correo electrónico con antelación suficiente. Se recomienda revisar periódicamente esta política."
+        ],
+        lastUpdate: {
+            datetime: "2026-04-07",
+            label: "Última actualización",
+            value: "07 de abril de 2026"
+        }
+    }
+];
+
+---
+
+<Layout title="Políticas de Privacidad | Black Panther Fitness">
+
+    <!-- PRIVACIDAD  -->
+    <section class="min-h-screen flex flex-row justify-center items-start md:gap-24 lg:gap-48 px-8 md:px-12 py-16 lg:px-16 lg:py-20 xl:px-24 xl:py-24">
+        
+        <!-- Título para escritorio -->
+        <h2 class="hidden md:block font-black tracking-widest text-9xl text-gray-900/50 md:[writing-mode:vertical-rl] md:rotate-180">PRIVACIDAD</h2>
+
+        <div class="flex flex-col items-start gap-10 max-w-3xl">
+            <!-- TÍTULO -->
+            <div class="space-y-7">
+                <hr class="max-w-1/5 h-1 bg-[#FFCC00]">
+                <h2 class="font-black tracking-tighter text-3xl md:text-4xl lg:text-5xl">POLÍTICA DE PRIVACIDAD<span class="text-[#FFCC00]">.</span></h2>
+            </div>
+
+            <div class="space-y-6">
+                {privacyPolicy.map((section) => (
+                        <article class="flex flex-col gap-2">
+
+                            <h3 class="font-semibold tracking-wider text-base md:text-lg lg:text-xl mb-2">
+                                <span class="text-[#FFCC00] mr-2">0{section.id}.</span>
+                                {section.title}
+                            </h3>
+
+                            {section.paragraphs?.map(paragraph => (
+                                <p class="font-medium leading-relaxed text-xs md:text-sm lg:text-base text-gray-400 text-justify">
+                                    {paragraph}
+                                </p>
+                            ))}
+
+                            {section.details && (
+                                <ul class="flex flex-col gap-3">
+                                    {section.details.map(detail => (
+                                        <li class="font-medium leading-relaxed text-xs md:text-sm lg:text-base text-gray-400">
+                                            <span class="text-[#FFCC00] font-semibold">
+                                                {detail.label}:
+                                            </span>{" "}
+                                            {detail.value}
+                                        </li>
+                                    ))}
+                                </ul>
+                            )}
+
+                            {section.bullets && (
+                                <ul class="flex flex-col gap-3">
+                                    {section.bullets.map(item => (
+                                        <li class="flex gap-3 items-start font-medium leading-relaxed text-xs md:text-sm lg:text-base text-gray-400">
+                                            <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#FFCC00]"></span>
+                                            <span>{item}</span>
+                                        </li>
+                                    ))}
+                                </ul>
+                            )}
+
+                        </article>
+                    ))
+                }
+            </div>
+        </div>
+    
+    </section>
+</Layout>

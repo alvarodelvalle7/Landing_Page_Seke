@@ -1,0 +1,62 @@
+---
+import "../styles/global.css";
+import logo from "../assets/img/blackpanthersekewhite.png";
+import { Image } from "astro:assets";
+
+const navLinks = [
+  { name: "Inicio", href: "/" },
+  { name: "Sobre mi", href: "/about" }
+];
+
+---
+<!-- HEADER DE LA APP -->
+<header class="sticky top-0 z-50 bg-black/90 text-white">
+
+    <!-- NAVEGACIÓN PARA ESCRITORIO -->
+    <nav class="flex justify-between w-full items-center px-8 py-6">
+
+        <!-- CONTENEDOR PARA EL LOGO Y EL TÍTULO -->
+        <a href="/" class="flex gap-4 items-center">
+            <Image src={logo} alt="Logo de Black Panther Fitness" loading="eager" class="w-7 h-7 md:w-8 md:h-8 lg:w-10 lg:h-10"/>
+            <span class="hidden min-[450px]:block m-0 font-black text-[#FFCC00] tracking-tighter leading-none text-lg md:text-xl lg:text-2xl">Black Panther Fitness</span>
+        </a>
+
+        <!-- ENLACE DE NAVEGACIÓN -->
+        <ul class="hidden lg:flex gap-8 items-center">
+            {navLinks.map((link) => (
+                <li><a href={link.href} class="relative text-sm font-semibold transition-colors duration-300 hover:text-[#FFEFCD] after:absolute after:left-1/2 after:-translate-x-1/2 after:-bottom-2 after:h-0.5 after:w-0 after:bg-[#FFEFCD] after:transition-all after:duration-300 hover:after:w-full">{link.name}</a></li>
+            ))}
+            <!-- ENLACE DE CONTACTO -->
+            <a href="/contact" class="hidden font-semibold text-sm lg:flex text-black tracking-wide bg-[#FFCC00] rounded-xs px-8 py-3 transition-all duration-300 hover:bg-yellow-500 hover:shadow-lg">CONTÁCTANOS</a>
+        </ul>
+
+        <!-- MENÚ HAMBURGUESA PARA MÓVILES Y TABLETS-->
+        <button
+            id="menu-btn"
+            class="flex flex-col gap-1 lg:hidden cursor-pointer"
+        >
+            <span class="line transition-all duration-300 w-6 h-0.5 bg-[#FFEFCD]"></span>
+            <span class="line transition-all duration-300 w-6 h-0.5 bg-[#FFEFCD]"></span>
+            <span class="line transition-all duration-300 w-6 h-0.5 bg-[#FFEFCD]"></span>
+        </button>
+
+    </nav>
+
+    <!-- NAVEGACIÓN PARA TABLETS Y MÓVILES CON BOTÓN CONTACTO Y CONTENEDOR -->
+    <nav id="mobile-menu" class="fixed top-15 left-0 right-0 bottom-0 w-full bg-black/90 translate-x-full transition-transform duration-300 lg:hidden flex flex-col justify-center gap-12 px-4">
+        
+        <!-- NAVEGACIÓN PARA TABLETS Y MÓVILES -->
+        <ul class="flex flex-col gap-8 w-full">
+            {navLinks.map((link) => (
+                <li><a href={link.href} class="flex items-center justify-center text-xl text-center font-semibold h-16 hover:bg-gray-900 rounded-xs">{link.name}</a></li>
+            ))}
+        </ul>
+
+        <!-- ENLACE DE CONTACTO PARA TABLETS Y MÓVILES -->
+        <a href="/contact" class="inline-flex items-center justify-center font-semibold text-center text-xl text-black tracking-wide bg-[#FFCC00] rounded-xs h-16 hover:bg-yellow-500">Contáctanos</a>
+    </nav>
+
+</header>
+
+<!-- SCRIPT PARA EL MENÚ HAMBURGUESA -->
+<script src="../scripts/menu.ts"></script>

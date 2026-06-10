@@ -1,0 +1,243 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+export const termsConditions = [
+    {
+        id: 1,
+        title: "Información del titular",
+        paragraphs: [
+        "Este sitio web es operado por Black Panther Fitness, con sede en España.",
+        "Para cualquier consulta, puede contactarse a través del correo electrónico proporcionado en la plataforma."
+        ]
+    },
+
+    {
+        id: 2,
+        title: "Descripción del servicio",
+        paragraphs: [
+        "Black Panther Fitness ofrece servicios de entrenamiento personal online, incluyendo:",
+        "El acceso a estos servicios está sujeto al registro previo del usuario y al pago correspondiente."
+        ],
+        bullets: [
+        "Rutinas de entrenamiento en formato PDF.",
+        "Seguimiento del progreso del usuario.",
+        "Videollamadas de asesoramiento.",
+        "Videos explicativos.",
+        "Contenido personalizado.",
+        "Comunicación directa con el entrenador."
+        ]
+    },
+
+    {
+        id: 3,
+        title: "Registro de usuarios",
+        paragraphs: [
+        "Para acceder a los servicios, el usuario debe crear una cuenta proporcionando información veraz y actualizada.",
+        "El usuario es responsable de:"
+        ],
+        bullets: [
+        "Mantener la confidencialidad de sus credenciales.",
+        "Todas las actividades realizadas desde su cuenta."
+        ],
+        highlightedText:
+        "No está permitido compartir la cuenta con terceros."
+    },
+
+    {
+        id: 4,
+        title: "Pagos y suscripción",
+        paragraphs: [
+        "El acceso a los servicios se realiza mediante un sistema de suscripción:"
+        ],
+        bullets: [
+        "Pago inicial y pagos mensuales recurrentes.",
+        "Renovación automática cada mes.",
+        "El usuario autoriza el cobro periódico correspondiente."
+        ],
+        highlightedText:
+        "No se realizan reembolsos, salvo obligación legal."
+    },
+
+    {
+        id: 5,
+        title: "Cancelación",
+        paragraphs: [
+        "El usuario puede cancelar su suscripción en cualquier momento.",
+        "Tras la cancelación:"
+        ],
+        bullets: [
+        "El usuario mantendrá el acceso hasta el final del periodo ya abonado.",
+        "No se realizarán nuevos cargos a partir del siguiente ciclo."
+        ]
+    },
+
+    {
+        id: 6,
+        title: "Responsabilidad del usuario",
+        paragraphs: [
+        "El usuario reconoce que la práctica de actividad física conlleva riesgos.",
+        "Se recomienda:",
+        "El usuario es responsable de su estado físico y de la ejecución de los ejercicios."
+        ],
+        bullets: [
+        "Consultar con un médico o profesional sanitario antes de iniciar cualquier programa de entrenamiento."
+        ]
+    },
+
+    {
+        id: 7,
+        title: "Limitación de responsabilidad",
+        paragraphs: [
+        "Black Panther Fitness:"
+        ],
+        bullets: [
+        "No garantiza resultados específicos.",
+        "No se hace responsable de lesiones, daños o perjuicios derivados del uso del servicio.",
+        "No sustituye asesoramiento médico profesional."
+        ]
+    },
+
+    {
+        id: 8,
+        title: "Contenido y uso del servicio",
+        paragraphs: [
+        "Todo el contenido proporcionado (rutinas, vídeos, materiales) es para uso personal del usuario.",
+        "Queda prohibido:"
+        ],
+        bullets: [
+        "Compartir, distribuir o comercializar el contenido.",
+        "Usarlo con fines distintos al uso personal."
+        ]
+    },
+
+    {
+        id: 9,
+        title: "Modificaciones del servicio",
+        paragraphs: [
+        "Black Panther Fitness se reserva el derecho de:",
+        "En caso de cambios relevantes, se informará al usuario cuando sea posible."
+        ],
+        bullets: [
+        "Modificar el contenido del servicio.",
+        "Actualizar precios.",
+        "Cambiar funcionalidades."
+        ]
+    },
+
+    {
+        id: 10,
+        title: "Protección de datos",
+        paragraphs: [
+        "El tratamiento de los datos personales se rige por la Política de Privacidad disponible en el sitio web."
+        ],
+        link: {
+        label: "Consultar Política de Privacidad",
+        href: "/privacy"
+        }
+    },
+
+    {
+        id: 11,
+        title: "Legislación aplicable",
+        paragraphs: [
+        "Estos términos se rigen por la legislación española."
+        ]
+    },
+
+    {
+        id: 12,
+        title: "Contacto",
+        paragraphs: [
+        "Para cualquier duda o consulta, el usuario puede contactar a través de los canales disponibles en la plataforma."
+        ],
+        note: {
+        title: "Nota importante",
+        content:
+            "Se recomienda revisar periódicamente estos términos y condiciones para estar al tanto de cualquier actualización."
+        }
+    }
+];
+---
+
+<Layout title="Términos y condiciones | Black Panther Fitness">
+
+    <!-- TÉRMINOS  -->
+    <section class="min-h-screen flex flex-row justify-center items-start md:gap-24 lg:gap-48 px-8 md:px-12 py-16 lg:px-16 lg:py-20 xl:px-24 xl:py-24">
+        
+        <!-- Título para escritorio -->
+        <h2 class="hidden md:block font-black tracking-widest text-9xl text-gray-900/50 md:[writing-mode:vertical-rl] md:rotate-180">CONDICIONES</h2>
+
+        <div class="flex flex-col items-start gap-10 max-w-3xl">
+
+            <!-- Título -->
+            <div class="space-y-7">
+                <hr class="max-w-1/5 h-1 bg-[#FFCC00]">
+                <h2 class="font-black tracking-tighter text-3xl md:text-4xl lg:text-5xl">TÉRMINOS Y CONDICIONES<span class="text-[#FFCC00]">.</span></h2>
+            </div>
+
+            <!-- Sección de términos -->
+            <div class="space-y-6">
+                {termsConditions.map((section) => (
+                    <article class="flex flex-col gap-2">
+
+                        <!-- Título -->
+                        <h3 class="font-semibold tracking-wider text-base md:text-lg lg:text-xl mb-2">
+                            <span class="text-[#FFCC00] mr-2">
+                                {section.id < 10 ? `0${section.id}` : section.id}.
+                            </span>
+                            {section.title}
+                        </h3>
+
+                        <!-- Descripción de términos -->
+                        {section.paragraphs?.map(paragraph => (
+                            <p class="font-medium leading-relaxed text-xs md:text-sm lg:text-base text-gray-400 text-justify">
+                                {paragraph}
+                            </p>
+                        ))}
+
+                        {section.bullets && (
+                            <ul class="flex flex-col gap-3">
+                                {section.bullets.map(item => (
+                                    <li class="flex gap-3 items-start font-medium leading-relaxed text-xs md:text-sm lg:text-base text-gray-400">
+                                        <span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#FFCC00]"></span>
+                                        <span>{item}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        )}
+
+                        {section.highlightedText && (
+                            <p class="font-semibold text-[#FFCC00] text-xs md:text-sm lg:text-base">
+                                {section.highlightedText}
+                            </p>
+                        )}
+
+                        {section.link && (
+                            <a
+                                href={section.link.href}
+                                class="self-start font-semibold text-[#FFCC00] hover:text-[#FFEFCD] transition-colors duration-300"
+                            >
+                                {section.link.label}
+                            </a>
+                        )}
+
+                        {section.note && (
+                            <div class="flex flex-col gap-3 border border-[#FFCC00]/30 bg-[#151515] p-4 rounded-xs mt-2">
+                                <span class="font-semibold tracking-widest text-[10px] md:text-xs text-[#FFCC00] uppercase">
+                                    {section.note.title}
+                                </span>
+
+                                <p class="font-medium leading-relaxed text-xs md:text-sm lg:text-base text-gray-400">
+                                    {section.note.content}
+                                </p>
+                            </div>
+                        )}
+
+                    </article>
+                ))
+            }
+            </div>
+        </div>
+    
+    </section>
+</Layout>

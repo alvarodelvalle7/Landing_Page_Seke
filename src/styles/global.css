@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Onest";
+  src: url("../assets/fonts/Onest-VariableFont_wght.woff2") format("woff2");
+  font-display: swap;
+}
+
+body {
+    font-family: "Onest", sans-serif;
+}
