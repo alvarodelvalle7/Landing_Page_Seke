@@ -5,13 +5,15 @@ import { Image } from "astro:assets";
 import { FileText, Video, TrendingUp, Zap, Dumbbell, Target, RefreshCw, MessageCircle} from "lucide-astro";
 import "../styles/global.css";
 
-// Textos de la página
+// ====== TEXTOS PRINCIPALES DE LA PÁGINA ======
 const pageTitle = "DESATA TU";
 const pageDescription = "Tu camino hacia una vida más saludable comienza aquí. Descubre una nueva forma de entrenar, superar tus límites y convertir tus objetivos en resultados reales.";
 const serviceDescription = "Inversiones únicas para resultados excepcionales. Elevando la narrativa visual a través de la precisión técnica y la visión artística."
 const priceDescription = "Accede a rutinas personalizadas, seguimiento profesional y estadísticas en tiempo real para alcanzar tus objetivos más rápido."
 
-// Elementos de cada tarjeta
+// ====== DEFINICIÓN DE SERVICIOS OFRECIDOS ======
+// Array que contiene cada servicio con su icono (Lucide), nombre y descripción
+// Se utiliza para renderizar dinámicamente las tarjetas de servicios en la sección correspondiente
 const cardServices = [
 	{
 		icon: FileText,
@@ -45,7 +47,9 @@ const cardServices = [
 	}
 ]
 
-// Elementos del precio
+// ====== DEFINICIÓN DE ELEMENTOS DE SUSCRIPCIÓN ======
+// Array que contiene los beneficios o características incluidas en el plan de suscripción premium
+// Se renderiza como una lista en la sección de precios
 const priceElements = [
 	{
 		icon: FileText,
@@ -76,7 +80,9 @@ const priceElements = [
 
 <Layout title="Home | Black Panther Fitness">
 
-	<!-- SECCIÓN HERO -->
+	<!-- ====== SECCIÓN HERO ======
+	Sección principal con imagen de fondo, llamada a la acción e información sobre la propuesta de valor
+	Utiliza imagen de jungla con overlay oscuro para mejorar legibilidad del texto -->
     <section class="relative min-h-[90vh] flex items-center">
 
 		<!-- IMAGEN DE BACKGROUND -->
@@ -104,16 +110,15 @@ const priceElements = [
 			<p class="text-sm md:text-base lg:text-lg font-medium text-gray-400 text-center">{serviceDescription}</p>
 		</div>
 
-		<!-- CONTENEDOR TARJETAS -->
+		<!-- CONTENEDOR TARJETAS - Grid responsivo que muestra servicios en 1, 2 o 3 columnas según pantalla -->
 		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
 			{cardServices.map((element) => {
-
+				// Extraer icono del objeto de servicio para renderizarlo dinámicamente
 				const Icon = element.icon;
 
                 return (
                     <article class="flex flex-col gap-4 items-center justify-start bg-blue-950/20 rounded-xs p-8 py-12">
-
-                        <!-- Icono -->
+                        {/* Icono SVG del servicio desde Lucide Astro */}
                     	<Icon class="w-8 h-8 sm:w-10 sm:h-10 text-[#FFCC00] shrink-0" />
 
                         <h2 class="font-semibold tracking-wider text-base md:text-lg lg:text-xl text-center">
@@ -130,7 +135,9 @@ const priceElements = [
 		
 	</section>
 
-	<!-- SECCIÓN DE PRECIOS -->
+	<!-- ====== SECCIÓN DE PRECIOS ======
+	Sección que muestra el plan de suscripción premium con precio inicial y mensual
+	Incluye lista de beneficios y call-to-action -->
 	<section class="min-h-screen flex flex-col xl:flex-row justify-center items-center xl:items-start bg-[#080806] gap-12 xl:gap-48 px-8 md:px-12 py-16 lg:px-16 lg:py-20 xl:px-24 xl:py-24">
 
 		<!-- CONTENEDOR TÍTULO -->

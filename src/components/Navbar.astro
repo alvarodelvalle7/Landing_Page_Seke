@@ -3,19 +3,23 @@ import "../styles/global.css";
 import logo from "../assets/img/blackpanthersekewhite.png";
 import { Image } from "astro:assets";
 
+// ====== ENLACES DE NAVEGACIÓN PRINCIPAL ======
+// Array que define las rutas principales accesibles desde la navbar
 const navLinks = [
   { name: "Inicio", href: "/" },
   { name: "Sobre mi", href: "/about" }
 ];
 
 ---
-<!-- HEADER DE LA APP -->
+<!-- ====== BARRA DE NAVEGACIÓN PRINCIPAL ======
+Componente sticky que persiste en todas las páginas (gracias a transition:persist)
+Incluye logo, navegación desktop, botón contacto y menú hamburguesa móvil -->
 <header class="sticky top-0 z-50 bg-black/90 text-white">
 
-    <!-- NAVEGACIÓN PARA ESCRITORIO -->
+    <!-- NAVEGACIÓN PARA ESCRITORIO - Visible solo en pantallas lg y superiores -->
     <nav class="flex justify-between w-full items-center px-8 py-6">
 
-        <!-- CONTENEDOR PARA EL LOGO Y EL TÍTULO -->
+        <!-- CONTENEDOR LOGO Y BRANDING - Enlace a home con logo e ícono -->
         <a href="/" class="flex gap-4 items-center">
             <Image src={logo} alt="Logo de Black Panther Fitness" loading="eager" class="w-7 h-7 md:w-8 md:h-8 lg:w-10 lg:h-10"/>
             <span class="hidden min-[450px]:block m-0 font-black text-[#FFCC00] tracking-tighter leading-none text-lg md:text-xl lg:text-2xl">Black Panther Fitness</span>

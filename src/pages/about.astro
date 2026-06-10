@@ -5,8 +5,13 @@ import { Image } from "astro:assets";
 import { Award, Hourglass } from "lucide-astro";
 import "../styles/global.css";
 
+// ====== DESCRIPCIÓN PERSONAL DEL ENTRENADOR ======
+// Texto que resume la filosofía y propósito profesional de Seke Gallart Bosque
 const textDescription = "Creo en el movimiento como motor del bienestar físico y social. La unión entre el deporte y la acción social me llevó a promover un entrenamiento funcional accesible, inclusivo y transformador para todas las personas."
 
+// ====== FORMACIÓN ACADÉMICA Y CERTIFICACIONES ======
+// Array que contiene las certificaciones profesionales del entrenador
+// Incluye: TAFAD (completado) y FP Integración Social (en curso)
 const certificates = [
     {
         icon: Award,
@@ -23,6 +28,9 @@ const certificates = [
 
 ]
 
+// ====== EXPERIENCIA LABORAL ======
+// Array con los trabajos y experiencias profesionales del entrenador
+// Ordenado cronológicamente de más reciente a más antiguo
 const experience = [
     {
         location: "Second Waves",
@@ -60,7 +68,8 @@ const experience = [
 
 <Layout title="Sobre Mi | Black Panther Fitness">
 
-    <!-- CONTENEDOR HERO -->
+    <!-- ====== SECCIÓN HERO - PRESENTACIÓN DEL ENTRENADOR ======
+    Sección introductoria con información personal, foto de perfil y llamada a la acción -->
     <section class="min-h-screen flex flex-col justify-center md:flex-row items-center gap-12 lg:gap-16 px-8 lg:px-16 xl:px-24 pb-16 md:pb-20 lg:pb-16">
 
         <!-- TEXTO -->
@@ -86,7 +95,9 @@ const experience = [
 
     </section>
 
-    <!-- CONTENEDOR CERTIFICADOS -->
+    <!-- ====== SECCIÓN CERTIFICADOS ======
+    Muestra la formación académica y certificaciones profesionales del entrenador
+    Incluye: TAFAD (completado) y FP Integración Social (en curso) -->
     <section class="min-h-screen flex flex-col justify-center items-center gap-12 px-8 md:px-12 py-16 lg:px-16 lg:py-20 xl:px-24 xl:py-24 bg-[#0c0c09]">
 
         <div class="space-y-7 w-full">
@@ -127,7 +138,9 @@ const experience = [
 
     </section>
 
-    <!-- CONTENEDOR DE EXPERIENCIA LABORAL -->
+    <!-- ====== SECCIÓN EXPERIENCIA LABORAL ======
+    Timeline con la trayectoria profesional del entrenador
+    Diseño vertical en móvil, con línea guía en desktop -->
     <section class="min-h-screen flex flex-col md:flex-row justify-center items-start gap-12 md:gap-40 px-8 md:px-12 py-16 lg:px-16 lg:py-20 xl:px-24 xl:py-24">
 
         <!-- Título para escritorio -->

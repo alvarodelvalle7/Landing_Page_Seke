@@ -2,6 +2,9 @@
 import "../styles/global.css";
 import { Facebook, Instagram, Mail, Phone } from "lucide-astro";
 
+// ====== ENLACES A REDES SOCIALES ======
+// Array que contiene las plataformas sociales y sus URL correspondientes
+// Se utiliza para renderizar dinámicamente los iconos y enlaces en el footer
 const socialMediaLinks = [
         {
         name: "Facebook",
@@ -15,11 +18,15 @@ const socialMediaLinks = [
     }
 ]
 
+// ====== ENLACES DE NAVEGACIÓN PRINCIPALES ======
+// Array con rutas principales disponibles desde el footer
 const navLinks = [
     { name: "Inicio", url: "/" },
     { name: "Sobre Mi", url: "/about" }
 ]
 
+// ====== ENLACES A DOCUMENTOS LEGALES ======
+// Array con política de privacidad y términos (futuro: cookies)
 const navTerms = [
     { name: "PRIVACIDAD", url: "/privacity"},
     { name: "TÉRMINOS", url: "/terms"},
@@ -27,6 +34,9 @@ const navTerms = [
 ]
 ---
 
+<!-- ====== PIE DE PÁGINA PRINCIPAL ======
+Componente persistent que aparece en todas las páginas (transition:persist)
+Incluye navegación, redes sociales, contacto y información legal -->
 <footer class="bg-[#010101] border-t-2 border-[#FFCC00]">
 
     <section class="flex flex-col md:flex-row justify-between md:items-start max-w-6xl mx-auto px-6 py-16 gap-16 md:gap-0">
