@@ -275,6 +275,6 @@ proyecto_seke/
 
 ---
 
-**Documentación completada con ❤️ para Black Panther Fitness**
+**Documentación completada para Black Panther Fitness**
 
 Para comenzar, lee [DOCUMENTATION.md](./DOCUMENTATION.md)

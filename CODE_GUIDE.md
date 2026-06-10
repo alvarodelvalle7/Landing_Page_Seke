@@ -185,7 +185,7 @@ const { title, subtitle = "Default", bgColor = "dark" } = Astro.props;
 <div class="opacity-0 hover:opacity-100 transition-opacity duration-500">
 
 <!-- Rotación -->
-<div class="rotate-45 -rotate-45 transition-transform duration-300">
+<div class="-rotate-45 transition-transform duration-300">
 ```
 
 ---
